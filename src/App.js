@@ -1,5 +1,10 @@
+import Gallery from './components/Gallery';
 import './style.scss';
 
 export default function App() {
-  <main>App Component</main>
+  return (
+    <main>
+      <Gallery />
+    </main>
+  );
 }
