@@ -1,13 +1,18 @@
 import './GalleryListItem.scss';
 
 export default function GalleryListItem(props) {
-  const { layout, source, title } = props;
-  const imgClass = layout; // 'portrait' or 'landscape'
+  const {
+    id, title, description,
+    source, setSelectedListItem,
+  } = props;
+  const listItem = { id, title, description, source, };
 
   return (
-    <div className='container GalleryListItem'>
-      <img 
-        className={imgClass}
+    <div
+      className='container GalleryListItem'
+      onClick={() => setSelectedListItem(listItem)}
+    >
+      <img
         src={source}
         alt={title}
       />
