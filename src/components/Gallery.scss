@@ -1,14 +1,7 @@
 .container.Gallery {
-  // Layout
-  border-radius: 10px;
-  width: 97%;
+  border-radius: 25px;
+  width: 100%;
   min-height: 2000px; // Temporary
-  // Outside
-  position: absolute;
-  top: 3%;
-  left: 50%;
-  transform: translateX(-50%);
-  // Inside
   background-color: white;
   padding: 25px;
 }
