@@ -14,6 +14,7 @@ export default function ImageModal(props) {
       <img
         src={source}
         alt={title}
+        onClick={event => event.stopPropagation()}
       />
     </div>
   );
