@@ -1,14 +1,8 @@
 .container.GalleryList {
-  // Layout
-  width: 90%;
-  height: 100%;
-
-  // Outside
   position: relative;
   left: 50%;
   transform: translateX(-50%);
 
-  // Inside
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
