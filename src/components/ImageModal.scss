@@ -4,7 +4,7 @@
   position: fixed;
   top: 0%;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: black;
 
   img {
     position: relative;
@@ -15,21 +15,38 @@
     padding: 0 50px;
   }
 
-  .xmark {
+  .xmark,
+  .chevron-left,
+  .chevron-right {
+    z-index: 1;
+    cursor: pointer;
+    
+    position: absolute;
+
     color: white;
     font-size: 50px;
     opacity: 30%;
-    
-    position: absolute;
-    top: 10px;
-    right: 20px;
-
-    z-index: 1;
-
-    cursor: pointer;
-
     &:hover {
       opacity: 50%;
     }
+  }
+
+  .chevron-left,
+  .chevron-right {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .xmark {
+    top: 10px;
+    right: 20px;
+  }
+
+  .chevron-left {
+    left: 10px;
+  }
+
+  .chevron-right {
+    right: 10px;
   }
 }
