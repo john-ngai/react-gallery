@@ -1,13 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  solid /*, regular*/,
-} from '@fortawesome/fontawesome-svg-core/import.macro';
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import imageData from '../imageData';
 import './ImageModal.scss';
 
 export default function ImageModal(props) {
   const { selectedListItem, setSelectedListItem } = props;
-  const { id, title /*, description*/, source } = selectedListItem;
+  const { id, title, description, source } = selectedListItem;
 
   const imageIds = Object.keys(imageData).map((id) => Number(id));
   const currentIndex = imageIds.indexOf(id);
@@ -56,6 +54,11 @@ export default function ImageModal(props) {
         icon={solid('chevron-right')}
         onClick={() => setSelectedListItem(getNextListItem(currentIndex))}
       />
+      <div className="textbox">
+        <p className="title">{title}</p>
+        <p className="description">{description}</p>
+        <FontAwesomeIcon className="chevron-up" icon={solid('chevron-up')} />
+      </div>
       <img src={source} alt={title} />
     </div>
   );
