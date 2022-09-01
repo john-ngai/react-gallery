@@ -9,11 +9,12 @@
   .xmark,
   .chevron-left,
   .chevron-right,
-  .chevron-up {
+  .chevron-up,
+  .chevron-down {
     cursor: pointer;
     position: absolute;
     z-index: 1;
-    
+
     color: white;
     font-size: 50px;
     opacity: 30%;
@@ -50,16 +51,16 @@
     padding: 0 50px;
   }
 
-  .textbox {
+  .info {
     position: absolute;
     z-index: 1;
     width: 100%;
     height: 50px;
-    
-    bottom: 0;
-    // transform: translateY(50px);
 
-    background-color: rgba(49, 55, 70, 0.75);
+    bottom: 0;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
     .title,
     .description {
       color: rgb(215, 215, 215);
@@ -70,11 +71,22 @@
       font-weight: bold;
     }
 
-    .chevron-up {
+    .chevron-up,
+    .chevron-down {
       right: 20px;
       top: -25px;
       font-size: 25px;
       opacity: 75%;
     }
+  }
+
+  .info.closed {
+    transform: translateY(50px);
+    transition: transform 0.3s ease;
+  }
+
+  .info.opened {
+    transform: translateY(0px);
+    transition: transform 0.3s ease;
   }
 }

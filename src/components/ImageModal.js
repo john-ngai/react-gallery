@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import imageData from '../imageData';
@@ -6,6 +7,7 @@ import './ImageModal.scss';
 export default function ImageModal(props) {
   const { selectedListItem, setSelectedListItem } = props;
   const { id, title, description, source } = selectedListItem;
+  const [infoIsOpen, setInfoIsOpen] = useState(false);
 
   const imageIds = Object.keys(imageData).map((id) => Number(id));
   const currentIndex = imageIds.indexOf(id);
@@ -37,6 +39,8 @@ export default function ImageModal(props) {
     return imageData[imageIds[previousIndex]];
   };
 
+  const infoClass = infoIsOpen ? 'info opened' : 'info closed';
+
   return (
     <div className="container ImageModal">
       <FontAwesomeIcon
@@ -54,10 +58,23 @@ export default function ImageModal(props) {
         icon={solid('chevron-right')}
         onClick={() => setSelectedListItem(getNextListItem(currentIndex))}
       />
-      <div className="textbox">
+      <div className={infoClass}>
         <p className="title">{title}</p>
         <p className="description">{description}</p>
-        <FontAwesomeIcon className="chevron-up" icon={solid('chevron-up')} />
+        {!infoIsOpen && (
+          <FontAwesomeIcon
+            className="chevron-up"
+            icon={solid('chevron-up')}
+            onClick={() => setInfoIsOpen(true)}
+          />
+        )}
+        {infoIsOpen && (
+          <FontAwesomeIcon
+            className="chevron-down"
+            icon={solid('chevron-down')}
+            onClick={() => setInfoIsOpen(false)}
+          />
+        )}
       </div>
       <img src={source} alt={title} />
     </div>
