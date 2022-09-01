@@ -1,9 +1,21 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .container.GalleryListItem {
   border-radius: 5px;
   width: 300px;
   height: 300px;
-  overflow: hidden; 
+  overflow: hidden;
   cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 1s ease;
+  animation-fill-mode: forwards;
 
   img {
     position: relative;
