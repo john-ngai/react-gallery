@@ -7,4 +7,10 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+
+  @for $i from 1 through 8 {
+    .container.GalleryListItem:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.5}s;
+    }
+  }
 }
