@@ -6,7 +6,7 @@ import './Gallery.scss';
 export default function Gallery() {
   const [modalImage, setModalImage] = useState(null);
 
-  // Disable scrolling & user select when an image is selected / opened in the modal.
+  // Disable scrolling & user select when an image is opened in the modal.
   if (modalImage) {
     document.body.style.overflow = 'hidden';
     document.body.style.userSelect = 'none';
