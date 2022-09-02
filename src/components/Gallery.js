@@ -4,10 +4,10 @@ import ImageModal from './ImageModal';
 import './Gallery.scss';
 
 export default function Gallery() {
-  const [selectedListItem, setSelectedListItem] = useState(null);
+  const [modalImage, setModalImage] = useState(null);
 
   // Disable scrolling & user select when an image is selected / opened in the modal.
-  if (selectedListItem) {
+  if (modalImage) {
     document.body.style.overflow = 'hidden';
     document.body.style.userSelect = 'none';
   } else {
@@ -17,12 +17,9 @@ export default function Gallery() {
 
   return (
     <section className="container Gallery">
-      <GalleryList setSelectedListItem={setSelectedListItem} />
-      {selectedListItem && (
-        <ImageModal
-          selectedListItem={selectedListItem}
-          setSelectedListItem={setSelectedListItem}
-        />
+      <GalleryList setModalImage={setModalImage} />
+      {modalImage && (
+        <ImageModal modalImage={modalImage} setModalImage={setModalImage} />
       )}
     </section>
   );

@@ -5,8 +5,8 @@ import imageData from '../imageData';
 import './ImageModal.scss';
 
 export default function ImageModal(props) {
-  const { selectedListItem, setSelectedListItem } = props;
-  const { id, title, description, source } = selectedListItem;
+  const { modalImage, setModalImage } = props;
+  const { id, title, description, source } = modalImage;
   const [infoIsOpen, setInfoIsOpen] = useState(false);
 
   const imageIds = Object.keys(imageData).map((id) => Number(id));
@@ -15,7 +15,7 @@ export default function ImageModal(props) {
   const getNextListItem = (currentIndex) => {
     let nextIndex = undefined;
 
-    // If the current selectedListItem is at the last index, return the first selectedListItem in the array.
+    // If the current modalImage is at the last index, return the first modalImage in the array.
     if (currentIndex === imageIds.length - 1) {
       nextIndex = 0;
       return imageData[imageIds[nextIndex]];
@@ -28,7 +28,7 @@ export default function ImageModal(props) {
   const getPreviousListItem = (currentIndex) => {
     let previousIndex = undefined;
 
-    // If the current selectedListItem is at index 0, return the last selectedListItem in the array.
+    // If the current modalImage is at index 0, return the last modalImage in the array.
     if (currentIndex === 0) {
       // nextIndex = 0;
       previousIndex = imageIds.length - 1;
@@ -46,17 +46,17 @@ export default function ImageModal(props) {
       <FontAwesomeIcon
         className="xmark"
         icon={solid('xmark')}
-        onClick={() => setSelectedListItem(null)}
+        onClick={() => setModalImage(null)}
       />
       <FontAwesomeIcon
         className="chevron-left"
         icon={solid('chevron-left')}
-        onClick={() => setSelectedListItem(getPreviousListItem(currentIndex))}
+        onClick={() => setModalImage(getPreviousListItem(currentIndex))}
       />
       <FontAwesomeIcon
         className="chevron-right"
         icon={solid('chevron-right')}
-        onClick={() => setSelectedListItem(getNextListItem(currentIndex))}
+        onClick={() => setModalImage(getNextListItem(currentIndex))}
       />
       <div className={infoClass}>
         <p className="title">{title}</p>

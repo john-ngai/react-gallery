@@ -3,14 +3,14 @@ import './GalleryListItem.scss';
 export default function GalleryListItem(props) {
   const {
     id, title, description,
-    source, setSelectedListItem,
+    source, setModalImage,
   } = props;
   const listItem = { id, title, description, source, };
 
   return (
     <div
       className='container GalleryListItem'
-      onClick={() => setSelectedListItem(listItem)}
+      onClick={() => setModalImage(listItem)}
     >
       <img
         src={source}

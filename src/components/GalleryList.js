@@ -5,7 +5,7 @@ import GalleryListItem from './GalleryListItem';
 // Stylesheet
 import './GalleryList.scss';
 
-export default function GalleryList({ setSelectedListItem }) {
+export default function GalleryList({ setModalImage }) {
   const galleryListElements = Object.keys(imageData).map(id => (
     <GalleryListItem
       key={imageData[id].id}
@@ -14,7 +14,7 @@ export default function GalleryList({ setSelectedListItem }) {
       description={imageData[id].description}
       layout={imageData[id].layout}
       source={imageData[id].source}
-      setSelectedListItem={setSelectedListItem}
+      setModalImage={setModalImage}
     />
   ));
   
