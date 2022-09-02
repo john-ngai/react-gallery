@@ -1,8 +1,5 @@
-// Data
-import imageData from '../imageData';
-// Component
 import GalleryListItem from './GalleryListItem';
-// Stylesheet
+import imageData from '../imageData';
 import './GalleryList.scss';
 
 export default function GalleryList({ setModalImage }) {
