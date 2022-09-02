@@ -9,6 +9,7 @@ export default function ImageModal(props) {
   const { id, title, description, source } = modalImage;
   const [infoIsOpen, setInfoIsOpen] = useState(false);
 
+  // Dependencies of getNextListItem & getPreviousListItem.
   const imageIds = Object.keys(imageData).map((id) => Number(id));
   const currentIndex = imageIds.indexOf(id);
 
