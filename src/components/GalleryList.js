@@ -3,7 +3,7 @@ import imageData from '../imageData';
 import './GalleryList.scss';
 
 export default function GalleryList({ setModalImage }) {
-  const renderedImages = Object.keys(imageData).map(id => (
+  const renderedImages = Object.keys(imageData).map((id) => (
     <GalleryListItem
       key={imageData[id].id}
       id={imageData[id].id}
@@ -14,10 +14,6 @@ export default function GalleryList({ setModalImage }) {
       setModalImage={setModalImage}
     />
   ));
-  
-  return (
-    <div className='container GalleryList'>
-        {renderedImages}
-    </div>
-  );
+
+  return <div className="container GalleryList">{renderedImages}</div>;
 }
