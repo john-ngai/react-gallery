@@ -1,9 +1,6 @@
-// Package
 import { useState } from 'react';
-// Components
 import GalleryList from './GalleryList';
 import ImageModal from './ImageModal';
-// Stylesheet
 import './Gallery.scss';
 
 export default function Gallery() {
