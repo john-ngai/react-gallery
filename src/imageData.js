@@ -41,7 +41,7 @@ const imageData = {
   6: {
     id: 6,
     title: 'Kusshi west coast oysters',
-    description: 'Supplied by Daily Seafood based in Toronto',
+    description: 'Supplied by Daily Seafood in Toronto',
     source: oysters,
   },
   7: {
