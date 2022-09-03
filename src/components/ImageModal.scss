@@ -4,6 +4,7 @@
   position: fixed;
   top: 0%;
   left: 0;
+
   background-color: black;
 
   .xmark,
@@ -16,6 +17,11 @@
     z-index: 1;
 
     color: white;
+  }
+
+  .xmark,
+  .chevron-left,
+  .chevron-right {
     font-size: 50px;
     opacity: 30%;
     &:hover {
@@ -40,6 +46,24 @@
 
   .chevron-right {
     right: 10px;
+  }
+
+  .chevron-up,
+  .chevron-down {
+    right: 20px;
+    top: -25px;
+    font-size: 25px;
+  }
+
+  .chevron-up {
+    opacity: 75%;
+  }
+
+  .chevron-down {
+    opacity: 50%;
+    &:hover {
+      opacity: 75%;
+    }
   }
 
   img {
@@ -69,14 +93,6 @@
     }
     .title {
       font-weight: bold;
-    }
-
-    .chevron-up,
-    .chevron-down {
-      right: 20px;
-      top: -25px;
-      font-size: 25px;
-      opacity: 75%;
     }
   }
 
